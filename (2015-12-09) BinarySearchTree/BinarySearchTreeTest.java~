@@ -1,0 +1,51 @@
+public class BinarySearchTreeTest
+{
+    private void helper(TreeNode root)
+    {
+        return (helper(root.leftNode, root) && helper(root.rightNode, root))
+    }
+    
+    private void helper(TreeNode currentNode, TreeNode previousNode)
+    {
+        //Test leftNode
+        if (currentNode == previousNode.leftNode)
+        {
+            if (currentNode.data > previousNode.data) return false;
+            else
+            {
+                if (currentNode.leftNode == null)
+                {
+                    if (currentNode.rightNode == null)
+                        return true;
+                    else return helper(currentNode.rightNode, currentNode);
+                }
+                else if(helper(currentNode.leftNode, currentNode))
+                {
+                    if (currentNode.rightNode == null)
+                        return true;
+                    else return helper(currentNode.rightNode, currentNode);
+                }
+            }
+        }
+        //Test rightNode
+        else
+        {
+            if (currentNode.data < previousNode.data) return false;
+            else
+            {
+                if (currentNode.leftNode == null)
+                {
+                    if (currentNode.rightNode == null)
+                        return true;
+                    else return helper(currentNode.rightNode, currentNode);
+                }
+                else if(helper(currentNode.leftNode, currentNode))
+                {
+                    if (currentNode.rightNode == null)
+                        return true;
+                    else return helper(currentNode.rightNode, currentNode);
+                }
+            }
+        }
+    }
+}

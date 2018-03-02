@@ -1,0 +1,76 @@
+		/* TODO find median
+		 * 
+		 * Variables 
+		 * k = index of median
+		 * n = number of entries
+		 * k = n / 2 rounded up
+		 * 
+		 * 
+		 * create two arrays based on a pivot (Smaller and Larger)
+		 * if smaller contains k or more entries it must contain the kth smallest entry (Median)
+		*/
+		
+		/*
+		 * First, use quick sort algorithm to get the two seperate arrays and pivot
+		 * then, recursively call the method using these guidelines
+		 * 
+		 * if smaller contains k or more entries, it must contain kth entry (Use smaller array for next iteration of method)
+		 * if smaller contains k - 1 entries, the kth smallest entry is the pivot (return the kth element)
+		 * if smaller contains fewer than k - 1 entries, the kth smallest entry is in larger (Use larger array for next iteration)
+		 */
+
+public class Median {
+    
+    private int array[];
+    private int length;
+ 
+    public void findMedian(int[] inputArr) {
+         
+        if (inputArr == null || inputArr.length == 0) {
+            return;
+        }
+        this.array = inputArr;
+        length = inputArr.length;
+        quickSort(0, length - 1);
+    }
+ 
+    private void quickSort(int lowerIndex, int higherIndex) {
+         
+        int i = lowerIndex;
+        int j = higherIndex;
+        // calculate pivot number, I am taking pivot as middle index number
+        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        // Divide into two arrays
+        while (i <= j) {
+            /**
+             * In each iteration, we will identify a number from left side which
+             * is greater then the pivot value, and also we will identify a number
+             * from right side which is less then the pivot value. Once the search
+             * is done, then we exchange both numbers.
+             */
+            while (array[i] < pivot) {
+                i++;
+            }
+            while (array[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                exchangeNumbers(i, j);
+                //move index to next position on both sides
+                i++;
+                j--;
+            }
+        }
+        // call quickSort() method recursively
+        if (lowerIndex < j)
+            quickSort(lowerIndex, j);
+        if (i < higherIndex)
+            quickSort(i, higherIndex);
+    }
+ 
+    private void exchangeNumbers(int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}

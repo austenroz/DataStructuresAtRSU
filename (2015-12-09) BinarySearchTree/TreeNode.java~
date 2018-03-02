@@ -1,0 +1,6 @@
+public class TreeNode
+{
+    private TreeNode leftNode;
+    private TreeNode rightNode;
+    private int data;
+}

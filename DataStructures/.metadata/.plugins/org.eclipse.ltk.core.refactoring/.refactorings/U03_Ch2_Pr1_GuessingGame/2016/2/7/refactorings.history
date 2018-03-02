@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;U04_ToDoList/src&apos;&#x0D;&#x0A;- Original project: &apos;U03_Ch2_Pr1_GuessingGame&apos;&#x0D;&#x0A;- Destination element: &apos;U04_ToDoList/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     BagInterface.java&#x0D;&#x0A;     Node.java&#x0D;&#x0A;     Bag.java" description="Copy compilation units" destination="=U04_ToDoList/src" element1="/src&lt;{BagInterface.java" element2="/src&lt;{Node.java" element3="/src&lt;{Bag.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1454892840188" units="3" version="1.0"/>
+</session>

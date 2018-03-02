@@ -1,0 +1,29 @@
+
+public class U06_Austen_Rozanski {
+
+	public static void main(String[] args) 
+	{
+		String phrase = "hello world well now isnt this a lovelly day";
+		String[] letters = new String[] {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+		for (int first = 0; first < letters.length; first++)
+		{
+			for (int second = 0; second < letters.length; second++)
+			{
+				findPair(phrase, new String(letters[first] + "" + letters[second]));
+			}
+		}
+	}
+	
+	public static void findPair(String phrase, String pair)
+	{
+		int pairsFound = 0;
+		for (int i = 0; i < phrase.length()-1; i++)
+		{
+			if (phrase.substring(i, i+2).equals(pair) )
+			{
+				pairsFound++;
+			}
+		}
+		System.out.println("Pairs of " + pair + " found: " + pairsFound);
+	}
+}

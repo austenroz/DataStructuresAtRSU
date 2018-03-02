@@ -1,0 +1,16 @@
+import java.awt.List;
+import java.util.ArrayList;
+
+public class U06_Austen_Rozanski {
+
+	public static void main(String[] args) {
+        
+       Median median = new Median();
+       int[] input = {24,2,45,20,56,75,2,56,99,53,12};
+       median.findMedian(input);
+       for(int i:input){
+           System.out.print(i);
+           System.out.print(" ");
+       }
+	}
+}

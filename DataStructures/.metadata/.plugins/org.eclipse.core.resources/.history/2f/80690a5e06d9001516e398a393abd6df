@@ -1,0 +1,46 @@
+		/* TODO find median
+		 * 
+		 * Variables 
+		 * k = index of median
+		 * n = number of entries
+		 * k = n / 2 rounded up
+		 * 
+		 * 
+		 * create two arrays based on a pivot (Smaller and Larger)
+		 * if smaller contains k or more entries it must contain the kth smallest entry (Median)
+		*/
+		
+		/*
+		 * First, use quick sort algorithm to get the two seperate arrays and pivot
+		 * then, recursively call the method using these guidelines
+		 * 
+		 * if smaller contains k or more entries, it must contain kth entry (Use smaller array for next iteration of method)
+		 * if smaller contains k - 1 entries, the kth smallest entry is the pivot (return the kth element)
+		 * if smaller contains fewer than k - 1 entries, the kth smallest entry is in larger (Use larger array for next iteration)
+		 */
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Median {
+
+	public int findMedian(Integer[] inputArr)
+	{
+		ArrayList list = (ArrayList) Arrays.asList(inputArr);
+		return findMedian(list);
+	}
+	
+    public int findMedian(ArrayList<Integer> inputList) {
+    	
+    	int pivot = inputList.get(0);
+    	ArrayList<Integer> smaller = new ArrayList<Integer>();
+    	ArrayList<Integer> larger = new ArrayList<Integer>();
+		
+    	for (int i = 1; i < inputList.size(); i++)
+    	{
+    		if
+    	}
+    }
+
+}

@@ -1,0 +1,29 @@
+import java.awt.List;
+import java.util.ArrayList;
+
+public class U06_Austen_Rozanski {
+
+	public static void main(String[] args) {
+
+       int[] input = {24,2,45,20,56,75,2,56,99,53,12};
+       System.out.println("Median is: " + findMedian(input));
+	}
+	
+	public static int findMedian(int inputArray[])
+	{
+		return findMedian(inputArray, (inputArray.length)/2 + 1, 0, inputArray.length-1);
+	}
+	
+	public static int findMedian(int inputArray[], int k, int low, int high)
+	{
+		
+	}
+	
+	public static int findPivot(int inputArray[])
+	{
+		int a = inputArray[0];
+		int b = inputArray[(int)((inputArray.length) / 2)];
+		int c = inputArray[inputArray.length-1];
+		return max(min(a,b), min(max(a,b),c));
+	}
+}

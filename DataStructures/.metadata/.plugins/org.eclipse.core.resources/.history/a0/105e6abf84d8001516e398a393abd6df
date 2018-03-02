@@ -1,0 +1,24 @@
+
+public class U06_Austen_Rozanski {
+
+	public static void main(String[] args) 
+	{
+		String phrase = "hello world";
+		String pair = "ll";
+		findPair(phrase, pair);
+	}
+	
+	public static void findPair(String phrase, String pair)
+	{
+		int pairsFound = 0;
+		for (int i = 0; i < phrase.length()-1; i++)
+		{
+			System.out.println(phrase.substring(i, i+1));
+			if (phrase.substring(i, i+1).equals(pair) )
+			{
+				pairsFound++;
+			}
+		}
+		System.out.println("Pairs of " + pair + " found: " + pairsFound);
+	}
+}

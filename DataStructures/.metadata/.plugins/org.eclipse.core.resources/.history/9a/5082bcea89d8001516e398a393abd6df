@@ -1,0 +1,65 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class U06_Austen_Rozanski {
+	
+	private static final String[] LETTERS = new String[] {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+	
+	public static void main(String[] args) throws IOException 
+	{
+		String phrase = "hello world well now isnt this a lovelly day";
+		String textFileName = "Shakespeare.txt";
+		
+		for (int first = 0; first < LETTERS.length; first++)
+		{
+			for (int second = 0; second < LETTERS.length; second++)
+			{
+				findPair(textFileName, new String(LETTERS[first]  + "" + LETTERS[second]));
+			}
+		}
+	}
+	
+	public static void findPair(String textFileName, String pair) throws IOException
+	{
+		FileReader inputStream = null;
+		int pairsFound = 0;
+		
+		try {
+			inputStream = new FileReader(textFileName);
+			int c;
+			String currentTestPair = "";
+			while ((c = inputStream.read()) != -1) 
+			{
+				if (currentTestPair.length() > 2)
+				{
+					currentTestPair = currentTestPair + Character.toString((char)c);
+					if (currentTestPair.equals(pair))
+						pairsFound++;
+				}
+				else
+				{
+					currentTestPair = currentTestPair.substring(1) + Character.toString((char)c); 
+				}
+			}
+		}
+		finally {
+        if (inputStream != null) {
+            inputStream.close();
+        }
+    }
+		
+		/*
+		int pairsFound = 0;
+		for (int i = 0; i < phrase.length()-1; i++)
+		{
+			if (phrase.substring(i, i+2).equals(pair) )
+			{
+				pairsFound++;
+			}
+		}
+		System.out.println("Pairs of " + pair + " found: " + pairsFound);*/
+	}
+}

@@ -1,0 +1,39 @@
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class DisplayCar {
+    
+    private final String IMAGE_FILE_NAME = "car.png";
+    private final int FRAME_WIDTH = 400;
+    private final int FRAME_HEIGHT = 400;
+    
+    carImage = new ImageIcon(this.getClass().getResource(IMAGE_FILE_NAME)).getImage();
+    public static void main(String[] args)
+    {
+        JFrame jFrame = new JFrame("Car Image");
+        jFrame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        Car car = new Car(carImage.getWidth(null), getHeight(null), carImage);
+        jFrame.add(car);
+            jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    jFrame.setVisible(true);
+    }
+}
+
+
+class Car {
+    
+    Image image;
+    int sizeX, sizeY;
+    
+    public Car(int sizeX, int sizeY, Image picture) 
+    {
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        image=picture;   
+    }
+    
+    public void draw(Graphics g) 
+    {
+        g.drawImage(image, 0, 0, null);
+    }
+}
